@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UImasterform.Master.cs" Inherits="Capstone.Site1" %>
+
+<!DOCTYPE html>
+<%-- Cooper Rosenberg 9/13/2021 This is the master page with code for the header and footer shown on every other page --%>
+<html>
+<head runat="server">
+    <title>Cooper Rosenberg</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body
+        {
+        font-family:Verdana;
+        background-color: darkgray
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Table ID="Table1" runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Image ID="headerLogo" runat="server" ImageUrl="/images/StockLogo.png" Height="41px" Width="87px" BorderWidth="1" BorderStyle="Groove"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="Cooper Rosenberg's Web Page" NavigateUrl="~/UImainpage.aspx"></asp:HyperLink>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <asp:Label ID="lblUserName" runat="server" Text="" style="float: right;"></asp:Label>
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderMainPage" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="footer">
+                <asp:Label ID="lblFooter" runat="server" Text="Cooper Rosenberg"></asp:Label>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>
