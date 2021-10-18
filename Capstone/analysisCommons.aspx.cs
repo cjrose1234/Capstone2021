@@ -26,7 +26,7 @@ namespace Capstone
             //on page load, finds the people the logged in user is already friends with and fills the listbox with their information
             if (!IsPostBack)
             {
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
                 string username = Session["UserName"].ToString();
 
                 lstFriends.Items.Clear();
@@ -48,7 +48,7 @@ namespace Capstone
         protected void btnSearchForUser_Click(object sender, EventArgs e)
         {
             //establish database connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //protects against CSS attacks
             string email = HttpUtility.HtmlEncode(txtSearchForUser.Text);
@@ -75,7 +75,7 @@ namespace Capstone
 
         protected void btnFriendUser_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             string username = Session["UserName"].ToString();
 
@@ -121,7 +121,7 @@ namespace Capstone
         protected void btnRemoveFriend_Click(object sender, EventArgs e)
         {
             //establish connection and set username equal to the sessions logged in user
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
             string username = Session["UserName"].ToString();
 
             //query to delete from the Users friends where the friends ID value is
@@ -151,7 +151,7 @@ namespace Capstone
         protected void btnShowAnalysis_Click(object sender, EventArgs e)
         {
 
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //query to select the title and date from an analysis with the same user as the selected friends
             string sqlQuery = "SELECT T.textTitle, A.analysisDate, A.analysisID FROM Texts T, Analysis A, UserFriends U WHERE " +
@@ -174,7 +174,7 @@ namespace Capstone
         protected void btnShowFriendAnalysis_Click(object sender, EventArgs e)
         {
 
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //query to select the analysis results from the analysis with the same ID as the selected friends
             string sqlQuery = "SELECT analysisResults FROM Analysis WHERE analysisID = '" + lstFriendAnalysis.SelectedValue.ToString() + "'";

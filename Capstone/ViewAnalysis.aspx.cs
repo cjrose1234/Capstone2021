@@ -31,7 +31,7 @@ namespace Capstone
             if (!IsPostBack)
             {
                 //establish connection to database
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
                 //first string to get the text title and id of all texts submitted by current logged in user.
                 //second string to get text title, date done and the ID of analyses submitted by user.
@@ -70,7 +70,7 @@ namespace Capstone
         protected void btnSendRequest_Click(object sender, EventArgs e)
         {
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
             //get the current date
             DateTime myDateTime = DateTime.Now;
             //query to insert the values into the database
@@ -107,7 +107,7 @@ namespace Capstone
         protected void btnDeleteAnalysis_Click(object sender, EventArgs e)
         {
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //string to delete the analysis from the database
             string sqlDelete = "DELETE FROM Analysis WHERE analysisID = '" + lstCompletedRequests.SelectedValue.ToString() + "'";
@@ -139,7 +139,7 @@ namespace Capstone
         protected void btnShowResults_Click(object sender, EventArgs e)
         {
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //query to get the test results from the analysis with the same analysis ID as the selected value in the listbox
             string sqlQuery = "SELECT analysisResults FROM Analysis WHERE analysisID = '" +

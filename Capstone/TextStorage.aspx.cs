@@ -31,7 +31,7 @@ namespace Capstone
             if (!IsPostBack)
             {
                 //establish connection
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
                 //query and command to get text title and text ID to put in the drop down list
                 string sqlQuery = "SELECT T.textTitle, T.textID FROM Texts T, Users U WHERE T.userID = U.userID AND U.username = '" +
@@ -74,7 +74,7 @@ namespace Capstone
             string sqlQuery = "SELECT textTitle FROM Texts WHERE textTitle = '" + title + "'";
             string result;
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //command and open connection
             SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
@@ -106,7 +106,7 @@ namespace Capstone
             string textID = lstManageTexts.SelectedValue;
 
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //updates the text
             //string sqlQuery = "UPDATE Texts SET textTitle='" + textTitle + "', textSource = '" + textSource + "', textBody = '" +
@@ -140,7 +140,7 @@ namespace Capstone
         protected void btnCreate_Click(object sender, EventArgs e)
         {
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //put text into variables for ease later and get the user logged in
             string title = HttpUtility.HtmlEncode(txtBoxTextTitle.Text);
@@ -191,7 +191,7 @@ namespace Capstone
         protected void btnEditText_Click(object sender, EventArgs e)
         {
             //establish connection
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //query to get the text title, source and body
             string sqlQuery = "SELECT textTitle, textSource, textBody FROM Texts WHERE textTitle = '" +

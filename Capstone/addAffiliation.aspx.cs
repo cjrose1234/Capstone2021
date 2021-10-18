@@ -19,13 +19,15 @@ namespace Capstone
             if (!IsPostBack) {
 
                 //establish connection to database
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
-                string sqlQuery = "SELECT orgName, orgID FROM Organizations";
+                string sqlQuery = "SELECT orgName, orgID FROM Organization";
 
                 SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
 
                 sqlCon.Open();
+
+                lstOrganizations.Items.Clear();
 
                 SqlDataReader results = cmd.ExecuteReader();
                 while ( results.Read() )

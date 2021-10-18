@@ -38,7 +38,7 @@ namespace Capstone
 
                 //query to find all users with the username
                 string sqlQuery = "SELECT * FROM Users WHERE username = '" + username + "'";
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
                 SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
 
@@ -79,7 +79,7 @@ namespace Capstone
             string purpose = HttpUtility.HtmlEncode(txtPurpose.Text);
             string username = Session["UserName"].ToString();
 
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
             SqlConnection sqlAuth = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
             //query to update the users information with the new info
             //string sqlQuery = "UPDATE Users SET firstName = '" + firstName + "', lastName = '" + lastName + "', emailAddress = '" +

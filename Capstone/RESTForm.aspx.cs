@@ -66,7 +66,7 @@ namespace Capstone
             if (!IsPostBack)
             {
                 //establish connection
-                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+                SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
                 //set username to logged in user and a query to find the emailAddress of the logged in user
                 string email = "";

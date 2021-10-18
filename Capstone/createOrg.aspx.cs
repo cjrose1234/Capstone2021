@@ -28,7 +28,7 @@ namespace Capstone
         protected void btnCommitOrg_Click(object sender, EventArgs e)
         {
             //establish connection to database
-            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString.ToString());
+            SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["StoryAnalyzer"].ConnectionString.ToString());
 
             //variable to put all of the address data into the right format
             string address = txtStreet.Text + ", " + txtCity.Text + ", " + txtState.Text + " " + txtZip.Text;
