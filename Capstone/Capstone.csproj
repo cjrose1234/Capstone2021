@@ -102,6 +102,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addAffiliation.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -163,6 +164,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addAffiliation.aspx.cs">
+      <DependentUpon>addAffiliation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addAffiliation.aspx.designer.cs">
+      <DependentUpon>addAffiliation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="analysisCommons.aspx.cs">
       <DependentUpon>analysisCommons.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
