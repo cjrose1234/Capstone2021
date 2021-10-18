@@ -50,16 +50,19 @@ namespace Capstone
 
             sqlCon.Close();
 
+            //queries to get userID and orgID for the affiliation
             string sqlSelectUser = "SELECT userID FROM Users WHERE username = '" + username + "'";
             string sqlSelectOrg = "SELECT orgID FROM Organization WHERE orgName = '" + orgName + "'";
 
             sqlCon.Open();
 
+            //sets userID and orgID to variables
             SqlCommand getID = new SqlCommand(sqlSelectUser, sqlCon);
             int userID = Convert.ToInt32(getID.ExecuteScalar());
             SqlCommand getOrg = new SqlCommand(sqlSelectOrg, sqlCon);
             int orgID = Convert.ToInt32(getOrg.ExecuteScalar());
 
+            //insert query to add an affiliation between the creating user and the created organization
             string sqlAffiliation = "INSERT INTO Affiliation (userID, orgID, beginDate, endDate, affiliationActive) VALUES " +
                 "(@userID, @orgID, @beginDate, @endDate, @active)";
 
