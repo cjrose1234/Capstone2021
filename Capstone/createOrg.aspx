@@ -27,4 +27,10 @@
     <br />
     Organization Phone Number:
     <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+    <br />
+    <asp:Button ID="btnCommitOrg" runat="server" Text="Create Organization" OnClick="btnCommitOrg_Click"/>
+    <br />
+    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+    <br />
+    <asp:Button ID="btnAnother" runat="server" Text="Create Another" Visible="false" OnClick="btnAnother_Click"/>
 </asp:Content>
