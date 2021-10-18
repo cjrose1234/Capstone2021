@@ -46,7 +46,7 @@ namespace Capstone
                 //findPass.CommandText = "SELECT PasswordHash FROM Pass WHERE Username = @Username";
                 //findPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
                 findPass.CommandType = CommandType.StoredProcedure;
-                findPass.CommandText = "JeremyEzellLab3";
+                findPass.CommandText = "sp_loginQuery";
                 findPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
                 SqlDataReader reader = findPass.ExecuteReader(); // create a reader
 

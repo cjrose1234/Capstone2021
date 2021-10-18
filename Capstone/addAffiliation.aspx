@@ -11,4 +11,6 @@
     <asp:DropDownList ID="lstOrganizations" runat="server" Width="300"></asp:DropDownList>
     <br />
     <asp:Button ID="btnJoinOrg" runat="server" Text="Request to join" OnClick="btnJoinOrg_Click"/>
+    <br />
+    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 </asp:Content>
