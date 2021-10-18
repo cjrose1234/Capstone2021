@@ -16,11 +16,6 @@ namespace Capstone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
             //if the usage is invalid lets the user know it was
             if (Session["InvalidUsage"] != null)
             {
@@ -33,6 +28,11 @@ namespace Capstone
                 lblStatus.ForeColor = Color.Green;
                 lblStatus.Text = "User logged out successfully!";
             }
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            
             // connect to database to retrieve stored password string
             try
             {
