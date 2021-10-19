@@ -4,7 +4,7 @@
 <%-- Cooper Rosenberg 9/13/2021 This is the master page with code for the header and footer shown on every other page --%>
 <html>
 <head runat="server">
-    <title>Cooper Rosenberg</title>
+    <title>Story Analyzer</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
