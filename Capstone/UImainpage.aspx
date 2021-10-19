@@ -15,7 +15,7 @@
     <br />
     <br />
     <br />
-    <asp:Table ID="Table1" runat="server" CellSpacing="75" HorizontalAlign="Center" BorderStyle="Solid" BorderColor="Orange" BackColor="DarkGray">
+    <asp:Table ID="Table1" runat="server" CellSpacing="75" HorizontalAlign="Center" BorderStyle="Solid" BorderColor="#61FFCF" BackColor="DarkGray">
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblViewUserLogin" runat="server" Text=""></asp:Label>
@@ -54,5 +54,20 @@
                 <asp:Button ID="btnFriendsAnalysis" runat="server" Text="Go To" OnClick="btnFriendsAnalysis_Click" />
             </asp:TableCell>
         </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblCreateOrg" runat="server" Text="Create Organization"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnCreateOrg" runat="server" Text="Go To" OnClick="btnCreateOrg_Click"/>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblAffiliation" runat="server" Text="Affiliate with an organization"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnAffiliation" runat="server" Text="Go To" OnClick="btnAffiliation_Click"/>
+            </asp:TableCell>
+        </asp:TableRow>
     </asp:Table>
+
 </asp:Content>

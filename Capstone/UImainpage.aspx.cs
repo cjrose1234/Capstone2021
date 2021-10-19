@@ -65,5 +65,15 @@ namespace Capstone
         {
             Response.Redirect("analysisCommons.aspx");
         }
+
+        protected void btnCreateOrg_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("createOrg.aspx");
+        }
+
+        protected void btnAffiliation_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addAffiliation.aspx");
+        }
     }
 }
